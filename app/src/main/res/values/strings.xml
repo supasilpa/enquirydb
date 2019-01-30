@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Enquiry</string>
+    <string name="pur">purpose</string>
+    <string-array name="p">
+        <item>offcial</item>
+        <item> not offcial</item>
+    </string-array>
+</resources>

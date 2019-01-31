@@ -1,5 +1,6 @@
 package com.sup.administrator.enquiry;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,9 +11,10 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 EditText e1,e2,e3,e4,e5;
-    Button b;
+    Button b,b1;
     String s1,s2,s3,s4,s5;
     enquirydb en;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +24,19 @@ EditText e1,e2,e3,e4,e5;
         e3=(EditText)findViewById(R.id.mob);
         e4=(EditText)findViewById(R.id.place);
         e5=(EditText)findViewById(R.id.msg);
+        b1=(Button)findViewById(R.id.search);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(getApplicationContext(),search.class);
+                startActivity(i);
+            }
+        });
+
         b=(Button)findViewById(R.id.cs);
         en=new enquirydb(this);
         en.getWritableDatabase();
+
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

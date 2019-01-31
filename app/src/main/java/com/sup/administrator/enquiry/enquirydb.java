@@ -2,6 +2,7 @@ package com.sup.administrator.enquiry;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -55,4 +56,12 @@ public class enquirydb extends SQLiteOpenHelper {
         }
 
     }
+//    data retrival
+    public Cursor Searchdata(String name)
+    {
+        SQLiteDatabase sq=this.getWritableDatabase();
+        Cursor cur=sq.rawQuery("SELECT * FROM "+tablename+" WHERE "+col2+"='"+name+"'",null);
+        return cur;
+    }
+
 }

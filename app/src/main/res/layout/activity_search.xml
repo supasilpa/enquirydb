@@ -17,9 +17,19 @@
         android:id="@+id/s"
         android:text="Search"/>
     <EditText
-        android:editable="false"
+
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/res"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/update"
+        android:text="Update"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/delete"
+        android:text="Delete"/>
 </LinearLayout>

@@ -63,5 +63,35 @@ public class enquirydb extends SQLiteOpenHelper {
         Cursor cur=sq.rawQuery("SELECT * FROM "+tablename+" WHERE "+col2+"='"+name+"'",null);
         return cur;
     }
+//    update
+    public boolean updatedata(String id,String email){
+        SQLiteDatabase sq=this.getWritableDatabase();
+        ContentValues cv=new ContentValues();
+        cv.put(col3,email);
+        long status=sq.update(tablename,cv,col1 + "=" +id,null);
+        if(status==-1)
+        {
+            return false;
+
+        }
+        else
+        {
+            return true;
+        }
+
+
+
+    }
+    public boolean delete(String id){
+        SQLiteDatabase sq=this.getWritableDatabase();
+        long status=sq.delete(tablename,col1+"="+id,null);
+        if(status==-1){
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 
 }

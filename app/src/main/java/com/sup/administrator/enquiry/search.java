@@ -26,6 +26,8 @@ EditText e,e3;
         b=(Button)findViewById(R.id.s);
         b1=(Button)findViewById(R.id.update);
         b2=(Button)findViewById(R.id.delete);
+
+
         build=new AlertDialog.Builder(this);
         build.setTitle("Confirm");
         build.setMessage("are you sure you want to delete?");
@@ -52,6 +54,9 @@ EditText e,e3;
                 dialogInterface.dismiss();
             }
         });
+
+
+
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
